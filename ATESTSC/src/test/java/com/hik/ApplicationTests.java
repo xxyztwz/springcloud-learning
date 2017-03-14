@@ -9,10 +9,10 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.hik.domain.primary.User;
-import com.hik.domain.primary.UserRepository;
-import com.hik.domain.secondary.Message;
-import com.hik.domain.secondary.MessageRepository;
+import com.hik.domain.User;
+import com.hik.domain.UserRepository;
+import com.hik.domain.Message;
+import com.hik.domain.MessageRepository;
 import com.hik.service.UserService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -55,7 +55,7 @@ public class ApplicationTests {
 		userRepository.save(new User("ddd", 40));
 		userRepository.save(new User("eee", 50));
 		Assert.assertEquals(5, userRepository.findAll().size());
-		// TODO 无法回滚。需要寻找解决方案
+
 		messageRepository.save(new Message("o1", "aaaaaaaaaa"));
 		messageRepository.save(new Message("o2", "bbbbbbbbbb"));
 		messageRepository.save(new Message("o3", "cccccccccc"));
