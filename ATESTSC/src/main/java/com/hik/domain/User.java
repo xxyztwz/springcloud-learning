@@ -1,19 +1,25 @@
 package com.hik.domain;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-
+@ApiModel
 @Entity
 public class User {
     @Id
     @GeneratedValue
+    @ApiModelProperty(value="用户唯一标识",required=true)
     private Long id;
     @Column(nullable = false)
+    @ApiModelProperty(value="这是用户名的描述",example="小明")
     private String name;
     @Column(nullable = false)
+    @ApiModelProperty(value="这是年龄的描述",example="11")
     private Integer age;
     public User(){}
 	public User(String name, Integer age) {

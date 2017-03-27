@@ -13,9 +13,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
+        	.csrf().disable()//Cross Site Request Forgery 跨站域请求伪造
             .authorizeRequests()
-                .antMatchers("/", "/home").permitAll()
-                .anyRequest().authenticated()
+            	.antMatchers("/*").permitAll()
+                .anyRequest().permitAll()
                 .and()
             .formLogin()
                 .loginPage("/login")

@@ -26,6 +26,8 @@ public class ApplicationTests {
 	
 	@Autowired
 	private UserService userService;
+	
+	public ApplicationTests(){}
 
 	@Test
 	@Rollback

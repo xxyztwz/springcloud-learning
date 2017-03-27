@@ -4,6 +4,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import springfox.documentation.annotations.ApiIgnore;
+
+@ApiIgnore(value="仅包含Web页面跳转")
 @Controller
 public class HelloController {
 	@RequestMapping("/")

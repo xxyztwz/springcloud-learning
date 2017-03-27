@@ -14,7 +14,6 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.4.4.RELEASE</version>
-		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
 	<properties>
@@ -27,7 +26,7 @@
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>Brixton.RELEASE</version>
+				<version>Camden.SR5</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
@@ -40,9 +39,20 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- 服务轨迹跟踪 -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-zipkin</artifactId>
+		</dependency>
+		<!-- 注册中心 -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-eureka-server</artifactId>
+		</dependency>
+		<!-- 配置中心 -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-config-server</artifactId>
 		</dependency>
 		<!-- 监控埋点 -->
 		<dependency>

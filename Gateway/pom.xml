@@ -1,20 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0"?>
 <project
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.hikvision</groupId>
-	<artifactId>sc-test</artifactId>
+	<artifactId>gateway</artifactId>
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
-	<name>sc-test</name>
+	<name>gateway</name>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.4.4.RELEASE</version>
 	</parent>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
@@ -47,46 +48,26 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-zipkin</artifactId>
 		</dependency>
-		<!-- 配置中心依赖 -->
+		<!-- 服务网关 -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-config</artifactId>
+			<artifactId>spring-cloud-starter-zuul</artifactId>
 		</dependency>
-		<!-- Thymeleaf模板依赖 -->
+		<!-- 断路器依赖 -->
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-hystrix</artifactId>
 		</dependency>
-		<!-- Spring Security依赖 -->
+		<!-- 客户端负载均衡依赖 -->
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
-		<!-- Spring-data-jpa依赖 -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.40</version><!--$NO-MVN-MAN-VER$ -->
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-feign</artifactId>
 		</dependency>
 		<!-- 监控埋点 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
-		<!-- Swagger2依赖 -->
-		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger2</artifactId>
-			<version>2.6.1</version>
-		</dependency>
-		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger-ui</artifactId>
-			<version>2.6.1</version>
-		</dependency>
 	</dependencies>
+
 </project>
